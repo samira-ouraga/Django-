@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Dojo page</title>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+      <h1>Index Page</h1>
+      <h3>Create a User</h3>
+      
+      <form action='/process' method='post'>
+        {% csrf_token %}
+          Name: <input type='text' name='name'>
+          <br><br>
+          Dojo Location:
+          <select name="location">
+            <option value="sanjose" >San Jose</option>
+            <option value="bellevue" >Bellevue</option>
+          </select>
+          <br><br>
+          Favorite Language:
+          <select name="language" >
+            <option value="python" >Python</option>
+            <option value="js" >JS</option>
+            <option value="csharp" >C#</option>
+          </select>
+          <br><br>
+          Comment:
+          <br>
+          <textarea name="comment"></textarea>
+          <br>
+          <input type='submit' value='button'>
+      </form>
+
+
+    </body>
+</html>
