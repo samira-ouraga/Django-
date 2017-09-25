@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Wall</title>
+    </head>
+    <body>
+        <header>
+        <h1>User dashborad</h1>
+        <a href="/user"> {{current_user.first_name}}</a>
+        <a href="/logout">logout</a>
+        <br>
+        <a href="/add">add book review</a>
+        </header>
+        <hr>
+        <!-- this will show all books and reviews -->
+        
+    <p>Here all the books and liked books will display</p>
+    <h1>Users</h1>
+    <ol>
+        {% for user in users %}
+            <li>{{user.first_name}} , {{user.last_name}}</li>
+        {% endfor %}
+    </ol>
+
+    <h1>Books</h1>
+    <ol>
+        {%if books%}
+        {% for book in books %}
+            <li>Title of book:{{book.name}}</li>
+            <li>User who uploaded the book:{{book.user_review.first_name}}</li>
+        {% endfor %}
+        {%endif%}
+    </ol>
+
+    <h1>Reviews</h1>
+    <ol>
+        {%if reviews %}
+        {% for review in reviews %}
+            <li>Reviews:{{review.notes}}</li>
+            <li>Reviewed by :{{review.reviewer.first_name}}</li>
+            <li>Title of the book:{{review.book_reviewed.name}} </li>
+        {% endfor %}
+        {%endif%}
+    </ol>
+        
+    </body>
+</html>

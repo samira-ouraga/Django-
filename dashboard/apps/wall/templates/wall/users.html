@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p> List of all users, click on each user to go to their profil</p>
+
+    <ul>
+    {%for user in users%}
+    <li><a href="/user" > {{user.first_name}}</a></li>
+    {%endfor%}
+    <ul>
+</body>
+</html>

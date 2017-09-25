@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+        <header>
+                <h1>User dashborad</h1>
+                <span>Hi </span>user['first_name']}}
+                <a href="/logout">logout</a>
+                <a href="/add">add book and review</a>
+                <a href="/books">Clik to see all reviews</a>
+        </header>
+    <p>This is a specific user page with their own reviews</p>
+    <ol>
+        {%for user in users%}
+            <li>Alias:{{user.first_name}}</li>
+            <li>Name: {{user.first_name}} , {{user.last_name}}</li>
+            <li>Email: {{user.email}}</li>
+        {%endfor%}
+    </ol>
+</body>
+</html>

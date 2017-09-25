@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>User dashborad</h1>
+        <p>Hi</p> 
+        <a href="/user"> {{current_user.first_name}}</a>
+        <a href="/logout">logout</a>
+        <a href="/books">Home</a>
+    </header>
+    <h3>Add a New Book Title and a Review</h3>
+    <form action="/create" method="post"> 
+        {% csrf_token %}
+        <ul style="width:100px; padding-left:50px;"> 
+            {{form3}}
+            <input type="submit">
+        </ul>
+    </form>
+</body>
+</html>

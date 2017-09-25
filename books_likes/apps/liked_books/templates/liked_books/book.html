@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>book</title>
+</head>
+<body>
+    <p> see the book title and review </p>
+    <h1>Books</h1>
+    <ol>
+        {% for book in books %}
+            <li>Title of book:{{book.name}}</li>
+            <li>Description:{{book.desc}}</li>
+            <li>User who uploaded the book:{{book.uploader.first_name}}</li>
+        {% endfor %}
+    </ol>
+
+    <h1>Reviews</h1>
+    <ol>
+        {% for review in reviews %}
+            <li>Reviews:{{review.notes}}</li>
+            <li>Reviewed by :{{review.reviewer.first_name}}</li>
+            <li>Title of the book:{{review.book.name}} </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
