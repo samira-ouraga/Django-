@@ -15,8 +15,13 @@
         
     <p>This is a specific book page with its own review</p>
     <!-- add more here -->
-
-       
+    <ol>
+        {%for review in reviews%}
+            <li>reviews: {{review.notes}}</li>
+            <li>done by :{{review.user.first_name}}</li>
+            <li> Title : {{review.book.title}}</li>
+        {%endfor%}
+    </ol>
 
 </body>
 </html>

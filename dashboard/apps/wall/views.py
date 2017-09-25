@@ -72,11 +72,9 @@ def book(request,book_number):
     context={
         'book_number': book_number,
         'current_user': current_user,
-        'current_book':Book.objects.filter(id=book_number),
-        'reviews': Review.objects.filter(book__title='current_book')
+        'reviews': Review.objects.filter(id=book_number),
 
     }
-    print Review.objects.filter(book__title='current_book')
     
 
     return render(request, 'wall/book.html', context)
